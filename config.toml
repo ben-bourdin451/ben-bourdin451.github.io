@@ -46,8 +46,8 @@ paginate = 5
 [languages]
   [languages.en]
     languageName = "English"
-		title = "Site"
-		subtitle = "Subtitle"
+		title = "ben bourdin"
+		# subtitle = "Subtitle"
     owner = ""
     keywords = ""
     copyright = ""
@@ -58,7 +58,7 @@ paginate = 5
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "Site"
+      logoText = "ben bourdin"
       logoHomeLink = "/"
 
     [languages.en.menu]

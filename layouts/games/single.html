@@ -30,10 +30,6 @@
     </div>
   {{ end }}
 
-	<div class="game-wrapper">
-		<iframe class="game" src="{{.Params.source}}" width="650px" height="350px"/>
-	</div>
-
   <div class="post-content">
     {{- with .Content -}}
       <div>
@@ -41,6 +37,10 @@
       </div>
     {{- end -}}
   </div>
+
+	<div class="game-wrapper">
+		<iframe class="game" src="{{.Params.source}}" width="650px" height="350px"/>
+	</div>
 
   {{ if eq .Type $.Site.Params.contentTypeName }}
   {{ partial "posts_pagination.html" . }}
