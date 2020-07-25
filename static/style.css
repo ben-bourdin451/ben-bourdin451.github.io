@@ -1,0 +1,9 @@
+.game {
+		border: none;
+		margin: 10px;
+}
+
+.game-wrapper {
+		display: flex;
+		justify-content: center;
+}

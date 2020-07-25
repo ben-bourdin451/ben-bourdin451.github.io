@@ -1,13 +1,39 @@
 {{ define "main" }}
 <div class="post">
   <h1 class="post-title">
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-
-  {{ if .Params.Cover }}
-    <img src="{{ .Params.Cover | absURL }}" class="post-cover" alt="{{ .Title | plainify | default " " }}" />
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+	</h1>
+  {{ if .Params.tags }}
+  <span class="post-tags">
+    {{ range .Params.tags }}
+    #<a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+    {{ end }}
+  </span>
   {{ end }}
 
-	<iframe src="{{.Params.source}}" width="500px" height="300px"/>
+  {{ if .Params.Cover }}
+  <img src="{{ .Params.Cover | absURL }}" class="post-cover" alt="{{ .Title | plainify | default " " }}" />
+  {{ end }}
+
+  {{ if .Params.Toc }}
+    <div class="table-of-contents">
+      <h2>
+        {{ if .Params.TocTitle }}
+          {{ .Params.TocTitle }}
+        {{ else if $.Site.Params.TocTitle }}
+          {{ $.Site.Params.TocTitle }}
+        {{ else }}
+          Table of Contents
+        {{ end }}
+      </h2>
+      {{ .TableOfContents }}
+    </div>
+  {{ end }}
+
+	<div class="game-wrapper">
+		<iframe class="game" src="{{.Params.source}}" width="650px" height="350px"/>
+	</div>
+
   <div class="post-content">
     {{- with .Content -}}
       <div>
