@@ -39,7 +39,7 @@
   </div>
 
 	<div class="game-wrapper">
-		<iframe class="game" src="{{.Params.source}}" width="650px" height="350px"/>
+		<iframe class="game" src="{{.Params.source}}" width="{{.Params.width}}" height="{{.Params.height}}"/>
 	</div>
 
   {{ if eq .Type $.Site.Params.contentTypeName }}
