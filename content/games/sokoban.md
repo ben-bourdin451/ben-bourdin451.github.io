@@ -3,6 +3,7 @@ title = "Sokoban"
 source = "https://ben-bourdin451.github.io/sokoban"
 width = "525px"
 height = "525px"
+cover = "img/sokoban_poster.png"
 +++
 
 Source code available [here](https://github.com/ben-bourdin451/sokoban).
